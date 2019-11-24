@@ -1,12 +1,15 @@
-const csv = require('csv-parser');
-const fs = require('fs');
+require('dotenv').config();
 
-fs.createReadStream('sample_data.csv')
-	.pipe(csv())
-	.on('data', (row) => {
-		// This data event will fire whenever a row has been processed
-		console.log(row);
-	})
-	.on('end', () => {
-		console.log('CSV file successfully processed');
-	});
+// CSV files
+const importProductAccessories = require('./contentful/importers/productAccessories');
+const importProductVariants = require('./contentful/importers/productVariants');
+
+/*
+		IMPORT DATA TO CONTENTFUL
+*/
+
+// * Product Accessories
+importProductAccessories('./csv/product_accessory.csv');
+
+// * Product Variants
+// importProductVariants('./csv/product.csv');
