@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
-    "contentful-management": "^7.33.0",
+    "contentful-management": "^11.5.1",
     "csv-parser": "^2.3.2",
     "dotenv": "^8.2.0"
   }
